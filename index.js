@@ -9,7 +9,7 @@ const client = new Client({
 });
 
 const TOKEN = "TOKEN_ICI";
-const ANNOUNCEMENT_CHANNEL_ID = "1396260141107777616";
+const ANNOUNCEMENT_CHANNEL_ID = "CHANNEL_ID_ICI";
 
 client.on("clientReady", () => {
   console.log(`Bot connecté en tant que ${client.user.tag}`);
