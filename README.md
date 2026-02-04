@@ -26,8 +26,6 @@ sudo apt install -y nodejs npm
 
 Ou via **nvm** (recommandé) :
 
-bash
-
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 source ~/.bashrc
@@ -37,8 +35,6 @@ nvm install --lts
 
 ### 2. Cloner le dépôt
 
-bash
-
 ```
 git clone https://github.com/damientros/Crossposting.git
 cd <VOTRE-REPO>
@@ -46,8 +42,6 @@ cd <VOTRE-REPO>
 ```
 
 ### 3. Installer les dépendances
-
-bash
 
 ```
 npm install
@@ -58,7 +52,6 @@ npm install
 
 Créer un fichier `.env` (recommandé) :
 
-bash
 
 ```
 nano .env
@@ -88,8 +81,6 @@ echo ".env" >> .gitignore
 
 ### Mode normal (terminal)
 
-bash
-
 ```
 node index.js
 
@@ -99,7 +90,6 @@ node index.js
 
 ### 1. Installer PM2
 
-bash
 
 ```
 sudo npm install -g pm2
@@ -108,8 +98,6 @@ sudo npm install -g pm2
 
 ### 2. Lancer le bot en arrière‑plan
 
-bash
-
 ```
 pm2 start index.js --name bot-annonces
 
@@ -117,16 +105,12 @@ pm2 start index.js --name bot-annonces
 
 ### 3. Voir l’état
 
-bash
-
 ```
 pm2 status
 
 ```
 
 ### 4. Voir les logs
-
-bash
 
 ```
 pm2 logs bot-annonces
@@ -137,8 +121,6 @@ pm2 logs bot-annonces
 
 ### 1. Générer le service systemd
 
-bash
-
 ```
 pm2 startup
 
@@ -147,8 +129,6 @@ pm2 startup
 PM2 affichera une commande `systemctl enable ...` → Copier‑coller‑la dans le terminal.
 
 ### 2. Sauvegarder la configuration
-
-bash
 
 ```
 pm2 save
