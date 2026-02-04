@@ -41,7 +41,7 @@ bash
 
 ```
 git clone https://github.com/damientros/Crossposting.git
-cd <TON-REPO>
+cd <VOTRE-REPO>
 
 ```
 
@@ -56,7 +56,7 @@ npm install
 
 ## 🔐 Configuration
 
-Crée un fichier `.env` (recommandé) :
+Créer un fichier `.env` (recommandé) :
 
 bash
 
@@ -65,12 +65,12 @@ nano .env
 
 ```
 
-Et ajoute :
+Et ajouter :
 
 Code
 
 ```
-DISCORD_TOKEN=TON_TOKEN_ICI
+DISCORD_TOKEN=TOKEN_ICI
 ANNOUNCEMENT_CHANNEL_ID=ID_DU_SALON
 
 ```
@@ -144,7 +144,7 @@ pm2 startup
 
 ```
 
-PM2 affichera une commande `systemctl enable ...` → Copie‑colle‑la dans ton terminal.
+PM2 affichera une commande `systemctl enable ...` → Copier‑coller‑la dans le terminal.
 
 ### 2. Sauvegarder la configuration
 
@@ -155,4 +155,4 @@ pm2 save
 
 ```
 
-Ton bot redémarrera automatiquement à chaque reboot.
+Le bot redémarrera automatiquement à chaque reboot.
