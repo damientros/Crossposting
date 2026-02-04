@@ -1,12 +1,158 @@
-# Crossposting
+# 🤖 Bot de Crossposting Discord
 
-Ce bot à pour but de publier automatiquement les messages d'un salon des annonces.
-Les autorisation suivantes sont nécessaires pour le faire fonctionner :
-- Voir le salon
-- Lire les messages
-- Envoyer des messages
-- Gérer les messages ← OBLIGATOIRE
-- Lire l’historique
-  
-# Inviter sur le serveur
-https://discord.com/oauth2/authorize?client_id=1468594754001571932&permissions=11264&integration_type=0&scope=bot
+Ce bot publie automatiquement (crosspost) tous les messages envoyés dans un salon d’annonces Discord.  
+Compatible avec les messages envoyés par des utilisateurs **et** par d’autres bots.
+
+---
+
+## 📦 Prérequis
+
+- Ubuntu / Debian / Raspberry Pi OS
+- Node.js (version LTS recommandée)
+- Un bot Discord (token)
+- Un salon d’annonces (channel de type "Announcement")
+
+---
+
+## 🛠️ Installation
+
+### 1. Installer Node.js
+
+```bash
+sudo apt update
+sudo apt install -y nodejs npm
+
+```
+
+Ou via **nvm** (recommandé) :
+
+bash
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+nvm install --lts
+
+```
+
+### 2. Cloner le dépôt
+
+bash
+
+```
+git clone https://github.com/<TON-USER>/<TON-REPO>.git
+cd <TON-REPO>
+
+```
+
+### 3. Installer les dépendances
+
+bash
+
+```
+npm install
+
+```
+
+## 🔐 Configuration
+
+Crée un fichier `.env` (recommandé) :
+
+bash
+
+```
+nano .env
+
+```
+
+Et ajoute :
+
+Code
+
+```
+DISCORD_TOKEN=TON_TOKEN_ICI
+ANNOUNCEMENT_CHANNEL_ID=ID_DU_SALON
+
+```
+
+Ajoute `.env` au `.gitignore` :
+
+Code
+
+```
+echo ".env" >> .gitignore
+
+```
+
+## 🚀 Lancer le bot
+
+### Mode normal (terminal)
+
+bash
+
+```
+node index.js
+
+```
+
+## 🟩 Lancer le bot 24/7 avec PM2
+
+### 1. Installer PM2
+
+bash
+
+```
+sudo npm install -g pm2
+
+```
+
+### 2. Lancer le bot en arrière‑plan
+
+bash
+
+```
+pm2 start index.js --name bot-annonces
+
+```
+
+### 3. Voir l’état
+
+bash
+
+```
+pm2 status
+
+```
+
+### 4. Voir les logs
+
+bash
+
+```
+pm2 logs bot-annonces
+
+```
+
+## 🔁 Démarrage automatique au boot
+
+### 1. Générer le service systemd
+
+bash
+
+```
+pm2 startup
+
+```
+
+PM2 affichera une commande `systemctl enable ...` → Copie‑colle‑la dans ton terminal.
+
+### 2. Sauvegarder la configuration
+
+bash
+
+```
+pm2 save
+
+```
+
+Ton bot redémarrera automatiquement à chaque reboot.
