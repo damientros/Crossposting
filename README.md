@@ -40,7 +40,7 @@ nvm install --lts
 bash
 
 ```
-git clone https://github.com/<TON-USER>/<TON-REPO>.git
+git clone https://github.com/damientros/Crossposting.git
 cd <TON-REPO>
 
 ```
